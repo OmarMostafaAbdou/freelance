@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+*{
+    font-family: 'Cairo', sans-serif;
+    font-weight: bold;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(19, 99, 163, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e") !important;
+}
+button.navbar-toggler{
+    border: hidden;
+    color: rgba(177, 177, 177, 0);
+    border-radius: 1px;
+}
+
+button.navbar-toggler :hover{
+    border: black;
+    /* background-color: rgb(3, 133, 177); */
+}
+.search{
+    position: relative;
+    box-shadow: 0 0 20px rgba(51, 51, 51, .1);
+    border-radius: 20px;
+
+    }
+
+    .search input{
+        width: 400px;
+     height: 38px;
+     text-indent: 25px;
+     border: 2px solid #d6d4d4;
+        border-radius: 20px;
+
+    }
+
+
+    .search input:focus{
+
+     box-shadow: none;
+     border: 2px;
+     border-color: #1363a3;
+     ;
+
+
+    }
+
+    .search .fa-search{
+
+     position: absolute;
+     top: 20px;
+     left: 16px;
+
+    }
+
+    .search button{
+     position: absolute;
+     bottom: 5px;
+     left: 8px;
+     height: 28px;
+     width: 37px;
+     /* background: #1363a3; */
+     border-radius: 20px;
+    }
+
+    svg{
+        position: absolute;
+     bottom: 5px;
+     left: 10px;
+    }
+
+    #signin{
+        background-color: #1363a3;
+        color: #ffff;
+        border:none;
+        /* height: 40px; */
+        /* width: 120px; */
+
+    }
+    #signup{
+        background-color: #ffd850;
+        color: #ffff;
+        border:none;
+        /* height: 40px; */
+        /* width: 120px; */
+    }
+
+    
+#signin:hover {
+    background-color: #1471be;
+}
+#signup:hover{
+    background-color: #edcb51;
+}
+.navbar-buttons{
+    display: flex;
+}
+a{
+    text-decoration: none;
+}
+.footerp{
+         border-bottom: none;
+             background: transparent; 
+}
+.footera{
+    text-decoration: none;
+    
+    font-size: 14px;
+}

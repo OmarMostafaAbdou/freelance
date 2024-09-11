@@ -1,0 +1,333 @@
+/*
+#ffffff
+#1362A3
+#91c9e4
+#e1032a
+#161616
+springgreen
+tomato
+floralwhite
+lightseagreen
+mediumspringgreen
+whitesmoke
+#ffcd1f 
+Shekari Font , cairo regular
+*/
+
+*{
+    font-family: 'Cairo', sans-serif;
+    color: #161616;
+    margin: 0; 
+    box-sizing: border-box;
+     
+   
+}
+body{
+    background-color: #F1F2F2;
+  
+}
+.colors_mode{
+
+    position: absolute;
+    top: 100px;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    
+}
+
+.colors_mode *{
+width: 20px;
+height: 20px;
+border: none;
+
+
+}
+
+
+header{
+    text-align: center;
+    margin-top:120px  ;
+}
+h1{
+    
+    color: #1362A3;
+}
+
+/* 
+كنت عامل سيرش بار بس بشمهندسة رقيه لقيتها
+ عاملة سيرش ف الناف  بار ف ملوش لزمة التكرار
+.search-section{
+ 
+    display: inline;
+    text-align: center;
+    
+ 
+    
+}
+
+.search-section *{
+    margin: 10px 20px;
+    padding: 10px 20px; 
+    height: 80px;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.search-section button{
+    background-color: #1362A3; 
+    color: white;                
+    border: none;            
+    cursor: pointer;         
+    width: 150px;
+    transition: background-color .5s ease;
+}
+
+.search-section button:hover{
+    background-color:#e1032a  ;
+    
+}
+
+
+.search-section input{
+   
+    width:50%;
+    border: 1px solid rgb(172, 166, 166);
+    
+} */
+
+
+.services-category{
+    width:  90%;
+    margin: 50px auto;
+    display: flex;
+    justify-content: start;
+    gap: 25px;
+    flex-wrap: wrap;   
+}
+
+
+
+.service{
+    margin: 1px auto;
+    padding: 15px 10px;
+    flex-basis: calc(20% - 10px);
+    background-color:#ffffff;
+    border: 2px solid gainsboro;
+    border-radius: 4px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0);
+    transition: transform .4s ease;
+    
+}
+.service:hover{
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, .4);
+    transform: scale(1.2);
+    cursor: pointer;
+    
+}
+
+.service h4{
+    color: #e1032a;
+    
+}
+.service img{
+    width:150px;
+    height: 150px;
+}
+
+/*---------------------- all services details section ----------------------- */
+
+.fa-angle-left {
+
+    font-size: 100px;
+    position: absolute;
+
+    top: 50%;
+    left: 0;
+    z-index: 1000;
+    }
+ .fa-angle-right {
+
+    font-size: 100px;
+    position: absolute;
+
+    top: 50%;
+    right: 0;
+    z-index: 1000;
+
+    
+    }
+
+
+.all-services{
+    
+    
+    display: flex;
+    width: 100%;
+    justify-content: end;
+    margin: 0 auto;
+    position: relative;
+    height: 480px;
+    overflow: hidden;
+
+    
+
+}
+
+
+
+.single-service{
+    
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content:center;
+    flex-wrap: wrap;
+    transition:  1s;
+    
+}
+
+.single-service h2{
+    text-align: center;
+    color: #1362A3;
+    width: 100%;
+    
+    }
+
+
+.service-bio{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 20px;
+    
+
+}
+/* all the child inside service-bio  */
+.service-bio *{
+    flex: 0 1 40%;
+}
+
+
+.service-bio img{
+    max-width: 350px;
+}
+
+
+
+
+.service-bio  button{
+    
+    background-color: #1362A3; 
+    color: white;                
+    border: none;            
+    cursor: pointer;         
+    width: 200px;
+    height: 60px;
+    transition: background-color .5s ease;
+}
+
+.service-bio button:hover{
+    background-color:#e1032a  ;
+    
+}
+
+/* ---------------------------------------------- */
+/* -----------------users ----------------------- */
+/* ---------------------------------------------- */
+
+.painting-section h2{
+    margin-top: 30px;
+    color: #1362A3;
+}
+.painting-section img{
+   
+    width:60%;
+    margin-bottom: 30px;
+}
+.users{
+    margin-bottom: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    
+    
+    justify-content: space-evenly;
+
+    gap: 50px;
+    
+}
+
+.user{
+    flex: 0 0 30%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    flex-direction: column;
+    height: 350px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: box-shadow .3s ease;
+    border: 1px solid rgb(226, 221, 221);
+    
+
+}
+.user:hover{
+    
+    box-shadow: 0px 12px 28px 0px rgba(140, 149, 159, 0.3); 
+    
+
+}
+
+.user img{
+    border-radius: 50%;
+    max-width: 120px;
+    background-color:#91c8e4;
+}
+.user h5{
+    color: #1362A3;
+    
+}
+
+.m-btn{
+    font-size: 12px;
+    background-color: #1362A3; 
+    color: white;                
+    border: none;  
+    border-radius: 4px;          
+    cursor: pointer;         
+    width: 100px;
+    height: 40px;
+    transition: background-color .5s ease;
+}
+
+.m-btn:hover{
+background-color:#ffcd1f   ;
+color: #161616;
+
+}
+
+
+@media screen and (max-width: 616px) {
+    /* CSS rules for larger screens go here */
+    .all-services{
+        height: 620px;
+    }
+
+}
+
+
+
+/* --------------------------------------- */
+/*
+#ffffff
+#1362A3
+#91c9e4
+#e1032a
+#161616
+#91C8E4
+#ffcd1f 
+#FFC90F
+Shekari Font , cairo regular
+*/

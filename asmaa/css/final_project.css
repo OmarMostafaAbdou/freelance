@@ -1,0 +1,142 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
+    direction: rtl;
+    font-family:Cairo;
+}
+.container{
+    width: 80%;
+    margin:auto;
+}
+.header{
+    background-color: #0059bf;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    /* height: 300px; */
+}
+.header-container{
+    width: 700px;
+    margin: auto;
+    display: flex;
+    /* background-color: chocolate; */
+    justify-content: space-between;
+    align-items: center;
+    font-size: 30px;
+
+}
+
+.info{
+    color: #ffff;
+   /* background-color: aquamarine; */
+}
+/* .header-img{
+    background-color: blueviolet;
+} */
+.header-img img{
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    position: relative;
+}
+.about h2,.galary h2{
+    font-size: 30px;
+    text-align: center;
+}
+.about-content{
+
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.about-info{
+    padding-left: 50px;
+    width: 1377px;
+}
+.about-img{
+  
+    width: 100%;
+}
+.about-img img{
+    width: 100%;
+}
+.galary{
+    margin-top: 50px;
+}
+.galary-cards{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 50px
+    
+}
+.galary-img{
+    width: 32%;
+    margin-bottom: 10px ;
+    transition: all 0.5s;
+    cursor: pointer;
+    
+    
+}
+.galary-img img{
+    width:100%;
+    /* border-radius: 10px; */
+    
+}
+.galary-img:hover{
+    width: 360px;
+    height: 360px;
+}
+.contact{
+    text-align: center;
+    margin-top: 50px;
+    /* transition: all 0.2s; */
+}
+.contact-btn{
+    border: #0059bf solid 2px;
+    background-color: #609adb;
+    width: 140px;
+    height: 60px;
+    border-radius:30px ;
+    cursor: pointer;
+    font-family: Cairo;
+    font-size: large;
+    transition:  0.2s;
+    color: #ffff;
+    
+}
+.contact-btn:hover{
+    background-color: #233e5e;
+}
+.fotter{
+    width: 100%;
+    height: 170px;
+    background-color: #0059bf;
+    margin-top: 50px;
+    /* display: flex;
+    justify-content: space-between;
+    padding: 30px; */
+}
+.fotter-icons{
+    /* align-items: center;
+    padding-right: 475px;
+    padding-top: 50px;
+    padding-bottom: 100px; */
+    width: 100%;
+    height: 170px;
+    padding-right: 610px ;
+    padding-top: 50px;
+    color: #ffff
+    /* background-color: #0059bf; */
+}
+/* #icons{
+    padding-right: 100px ;
+} */
+/* .text{
+    display:flex;
+    color: #ffff;
+    font-size: 30px;
+} */

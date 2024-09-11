@@ -1,0 +1,554 @@
+<?php
+include_once("login/HTML/includes/config_session.inc.php");
+
+?>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="index.css" rel="stylesheet">
+  <link rel="stylesheet" href="landing-css/all.min.css">
+  <link rel="stylesheet" href="landing-css/all.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <title>Document</title>
+</head>
+
+<body>
+  <!-- nav -->
+  <nav class="nav  navbar-nav fixed-top">
+    <div class="container-fluid ">
+      <div class="nav-container">
+        <!-- sidebar -->
+        <div class="logo-side">
+          <button class="btn btn-light sidebar-btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon sidebar-icon"></span>
+          </button>
+
+          <!-- inside the sidebar -->
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+            <div class="offcanvas-header">
+              <div class="mx-auto" style="width: 200px;"> <!-- to center the logo vertically-->
+                <img style="border: none; height: 90px;" class="side-logo img-fluid img-thumbnail offcanvas-title" id="offcanvasNavbarLabel" src="stocks/logo.png" alt="logo">
+              </div>
+              <!-- <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Offcanvas</h5> -->
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+
+            <div class="offcanvas-body">
+              <ul class="side-bar  justify-content-end flex-grow-1 pe-3">
+                <li>
+                  <a href="lashin/all_freelancers.php">
+                    <button id="side-buttons" class="btn btn-primary">
+                      <span><i class="fa-solid fa-person-rays"></i></span>
+                      <span>المستقليين</span>
+                    </button>
+                  </a>
+                </li>
+
+                <li>
+                  <a href="lashin/services.php"><button id="side-buttons" class="btn btn-primary">
+                      <span><i class="fa-solid fa-business-time"></i></span>
+                      <span>الخدمات</button></span></a>
+                </li>
+                <li>
+                  <a href="abdelrahman/community.php"><button id="side-buttons" class="btn btn-primary">
+                      <span><i class="fa-solid fa-users"></i></i></span>
+                      <span>المجتمع</button></span></a>
+                </li>
+                <li>
+                  <a href="asmaa/profile-galary.php"><button id="side-buttons" class="btn btn-primary">
+                      <span><i class="fa-solid fa-network-wired"></i></span>
+                      <span>اعمالي</button></span></a>
+                </li>
+                <li>
+                  <a href="asmaa/profile-galary.php"><button id="side-buttons" class="btn btn-primary">
+                      <span><i class="fa-solid fa-circle-question"></i></span>
+                      <span>عن الموقع</button></span></a>
+                </li>
+                <li>
+                  <a href="asmaa/profile-galary.php"><button id="side-buttons" class="btn btn-primary">
+                      <span><i class="fa-solid fa-phone"></i></span>
+                      <span>تواصل معنا</button></span></a>
+                </li>
+                
+                      
+              </ul>
+              <!-- <form class="d-flex mt-3" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                  </form> -->
+            </div>
+
+          </div>
+          <!-- logo -->
+          <a class="navbar-brand logo" href="index.html">
+            <img src="stocks/freelancers-logo-white.png" alt="logo" height="50">
+          </a>
+        </div>
+
+
+        <div class="nav-buttons">
+
+          <ul class="navbar-nav mr-auto  nav-items">
+          <li>
+                <a href="index.php"><button id="home" class="btn btn-primary home">
+                    <span><i class="fa-solid fa-house"></i></span>
+                    <span>الرئيسية</button></span></a>
+              </li>
+            <?php if (isset($_SESSION['user_id'])) : ?>
+              <?php if ($_SESSION['user_role'] == "Client") : ?>
+                <!-- <li>
+                  <a href="abdallah-test/users/index.php"><button id="nav-buttons" class="btn btn-primary">
+                      <span><i class="fa-regular fa-plus"></i></span>
+                      <span>اضف</button></span></a>
+                </li> -->
+                <li>
+                  <a href="abdallah/request/request/index.php"><button id="nav-buttons" class="btn btn-primary">
+                      <span><i class="fa-regular fa-plus"></i></span>
+                      <span>اضف مشروع</button></span></a>
+                </li>
+              <?php elseif ($_SESSION['user_role'] == "Freelancer") : ?>
+                <li>
+                  <a href="omarfinal/free.php"><button id="nav-buttons" class="btn btn-primary">
+                      <span><i class="fa-regular fa-plus"></i></span>
+                      <span>اضف خدمة</button></span></a>
+                </li>
+              <?php endif; ?>
+              <li>
+                <a href="lashin/all_freelancers.php"><button id="nav-buttons" class="btn btn-primary">
+                    <span><i class="fa-solid fa-person-rays"></i></span>
+                    <span>المستقليين</button></span></a>
+              </li>
+              <li>
+                <a href="lashin/services.php"><button id="nav-buttons" class="btn btn-primary">
+                    <span><i class="fa-solid fa-business-time" style="color: #ffffff;"></i></span>
+                    <span>الخدمات</button></span></a>
+              </li>
+              <li>
+                <a href="abdelrahman/community.php"><button id="nav-buttons" class="btn btn-primary">
+                    <span><i class="fa-solid fa-users" style="color: #ffffff;"></i></i></span>
+                    <span>المجتمع</button></span></a>
+              </li>
+              <li>
+                <a href="asmaa/profile-galary.php"><button id="nav-buttons" class="btn btn-primary">
+                    <span><i class="fa-solid fa-network-wired"></i></span>
+                    <span>اعمالي</button></span></a>
+              </li>
+              <!-- <li>
+                <a href="login/HTML/includes/logout.inc.php"><button id="nav-buttons" class="btn btn-primary">
+                    <span><i class="fa-regular fa-plus"></i></span>
+                    <span>تسجيل الخروج</button></span></a>
+              </li> -->
+
+              <!-- sign buttons -->
+
+            <?php else : ?>
+
+              <li>
+                <a href="login/html/signup.php"><button id="signup" class="btn btn-primary">
+                    <span><i class="fa-solid fa-user-plus"></i></i></span>
+                    <span>حساب جديد</button></span></a>
+              </li>
+              <li>
+                <a href="login/html/login.php"><button style="width: auto !important;" id="nav-buttons" class="btn btn-primary">
+                    <span><i class="fa-solid fa-arrow-right-to-bracket"></i></span>
+                    <span>تسجيل الدخول</button></span></a>
+              </li>
+            <?php endif; ?>
+
+          </ul>
+        </div>
+
+        <?php if (isset($_SESSION['user_id'])) : ?>
+          <div class="user-profile">
+            <img src="stocks/afro-cool-man-smiling-looking-friendly-showing-number-one-bike-repairman-concept.jpg" class="user-pic-r" onclick="toggleMenu()" />
+
+            <div class="sub-menu-wrap" id="subMenu">
+              <div class="sub-menu">
+                <div class="user-info">
+                  <img src="stocks/afro-cool-man-smiling-looking-friendly-showing-number-one-bike-repairman-concept.jpg" />
+                  <?php echo '<h3>' . $_SESSION["user_name"] . '</h3>'; ?>
+                </div>
+                <hr />
+
+                <a href="abdallah-test/users/index.php" class="sub-menu-link">
+                  <i class="fa-solid fa-edit"></i>
+                  <p>الصفحة الشخصية</p>
+                  <span>></span>
+                </a>
+                <a href="abdallah-test/users/index.php" class="sub-menu-link">
+                  <i class="fa-solid fa-file-edit"></i>
+                  <p>اعدادات الحساب</p>
+                  <span>></span>
+                </a>
+                <a href="#" class="sub-menu-link">
+                  <i class="fa-solid fa-hands-asl-interpreting"></i>
+                  <p>المساعدة </p>
+                  <span>></span>
+                </a>
+                <a href="login/HTML/includes/logout.inc.php" class="sub-menu-link">
+                  <i class="fa-solid fa-long-arrow-alt-left"></i>
+                  <p>تسجيل الخروج</p>
+                  <span>></span>
+                </a>
+              </div>
+            </div>
+          </div>
+        <?php endif; ?>
+
+      </div>
+
+      <!-- search -->
+      <!-- <div class="search">
+                        <input type="search" class="form-control" placeholder="ابحث عن ..">
+                        <button class="btn btn-light sbutton">
+                          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 101 101" id="search"><path d="M63.3 59.9c3.8-4.6 6.2-10.5 6.2-17 0-14.6-11.9-26.5-26.5-26.5S16.5 28.3 16.5 42.9 28.4 69.4 43 69.4c6.4 0 12.4-2.3 17-6.2l20.6 20.6c.5.5 1.1.7 1.7.7.6 0 1.2-.2 1.7-.7.9-.9.9-2.5 0-3.4L63.3 59.9zm-20.4 4.7c-12 0-21.7-9.7-21.7-21.7s9.7-21.7 21.7-21.7 21.7 9.7 21.7 21.7-9.7 21.7-21.7 21.7z"></path></svg>
+                        </button>
+                    </div> -->
+
+
+    </div>
+  </nav><br><br>
+
+
+  <!-- header -->
+  <header id="intro">
+    <div class="container-lg">
+      <div class="row justify-content-center align-items-center">
+        <div class="col-md-6 text-center ">
+          <h1 style="font-size: larger;">
+            <div class="h1-1">اهلاً و سهلاً..</div><br>
+            <div class="h1-2"> اللي تعرفــه احسن من اللي متعرفوش ،عشان كده عندنا تقدر تزود دخلك ببساطـة و امان عن طريــق أي حرفـة بتعـرف تعملهــا.</div>
+            <div class="h1-3">ولو جاي عشان خدمة معينة هتلاقي امهر الحرفيين .</div>
+          </h1><br>
+          <div>
+            <button type="button" id="more" class="col-lg-3 btn btn-primary" onclick="location.href='#'">للمزيد</button>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center  d-md-block">
+          <img class="img-fluid imgheader" src="stocks/sewingg.png" alt="headerimg">
+        </div>
+      </div>
+    </div>
+  </header><br>
+  <section>
+    <div class="container-lg section1">
+      <div>
+        <!-- <div class="purchase">
+        <h1 id="purchase" >و الشاري</h1>
+      </div> -->
+        <div class="seller">
+          <img class="models img-fluid" src="stocks/section2.png" alt="headerimg">
+        </div>
+        <!-- <div class="seller">
+        <h1 id="seller">بين البايع</h1>
+      </div> -->
+      </div>
+    </div>
+  </section>
+
+  <section class="section3">
+    <div class="all">
+      <!-- <div class="btn-group" role="group" aria-label="Basic radio toggle button group"> -->
+      <!-- <input  type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+      <label style="accent-color: #1363a3;" class="btn btn-outline-primary rounded-0 btn1" for="btnradio1">الحرفيين</label>
+    
+      <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+      <label class="btn btn-outline-primary rounded-0 btn2" for="btnradio2">العملاء</label> -->
+      <p class="headline_p">
+        تعـرف علي الخدمـات
+      </p>
+      <div class="iconss">
+        <div class="item">
+          <img src="stocks/crafts/009-woodworking.svg" class="section3_img">
+          <p class="section3_p">نجارة</p>
+        </div>
+        <div class="item">
+          <img src="stocks/crafts/004-sewing-machine.svg" class="section3_img">
+          <p class="section3_p">تفصيل</p>
+        </div>
+        <div class="item">
+          <img src="stocks/crafts/005-needle-with-thread-to-sew-clothes.svg" class="section3_img">
+          <p class="section3_p">تطريز</p>
+        </div>
+        <div class="item">
+          <img src="stocks/crafts/008-repairing.svg" class="section3_img">
+          <p class="section3_p">سباكة</p>
+        </div>
+        <div class="item">
+          <img src="stocks/crafts/006-metalworking.svg" class="section3_img">
+          <p class="section3_p">حدادة</p>
+        </div>
+        <div class="item">
+          <img src="stocks/crafts/001-paint-roller.svg" class="section3_img">
+          <p class="section3_p">نقاشة</p>
+        </div>
+        <div class="item">
+          <img src="stocks/crafts/001-paint-roller.svg" class="section3_img">
+          <p class="section3_p">نقاشة</p>
+        </div>
+        <div class="item">
+          <img src="stocks/crafts/002-handcraft.svg" class="section3_img">
+          <p class="section3_p">اخري</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="section2">
+    <div class="r-container2">
+      <p class="section2title">اراء بعض الحرفيين</p>
+      <div id="carouselExampleAutoplaying" class="carousel slide slide" data-bs-ride="carousel">
+        <div>
+          <div class="carousel-inner inner">
+            <div class="carousel-item active review">
+              <img src="stocks/slide img/khayatah.png" class="img1" alt="...">
+              <p class="name">جنة الرحمن غايتي</p>
+              <p class="job">خياطة</p>
+              <p class="detail">علاقتي بمستقل متعلقة بصورة رئيسة بزيادة الإنتاجية، فإذا أحسنت استخدام مستقل وتوظيف المستقلين ستتفاجئ بارتفاع حجم الإنتاجية في شركتك، لأنك ستكتشف أنك لا تملك يدين فقط بل أيادٍ كثيرة تنجز أعمالك، فالقيمة التي أضافها لي مستقل هي إنجاز مهام أكثر في وقت أقل.</p>
+              <!-- <div class="slidetxt">
+          
+        </div> -->
+
+            </div>
+            <div class="carousel-item review">
+              <img src="stocks/slide img/carprnter.png" class="img2" alt="...">
+              <p class="name">ابو مالك البوب</p>
+              <p class="job">سباك</p>
+              <p class="detail">ما يميز مستقل عن غيره هو بساطته وسهولة الاستخدام، ما في تعقيدات كتير مثل الموجودة في المواقع العالمية، وفكرة أن يكون هنالك مستقل أتواصل معه باللغة العربية ونشترك في ثقافة واحدة. شيء عظيم.</p>
+              <div class="slidetxt">
+
+              </div>
+            </div>
+            <div class="carousel-item review">
+              <img src="stocks/slide img/mechaniky.png" class="img3" alt="...">
+              <p class="name">الفهد الاسمر</p>
+              <p class="job">ميكانيكي</p>
+              <p class="detail">>ما يميز مستقل عن غيره هو بساطته وسهولة الاستخدام، ما في تعقيدات كتير مثل الموجودة في المواقع العالمية، وفكرة أن يكون هنالك مستقل أتواصل معه باللغة العربية ونشترك في ثقافة واحدة. شيء عظيم.</p>
+
+              <div class="slidetxt">
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon slideicon" aria-hidden="true"></span>
+          <span class="visually-hidden-focusable">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+          <span class="carousel-control-next-icon slideicon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </section>
+  <hr>
+
+  <section class="section4">
+    <div class="r-container-4">
+      <p>الاسئلة الشائعة</p>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header acchead">
+            <button class="accordion-button accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              ما هي منصة "فريلانسرز مننا وعلينا" ؟
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+            <div class="accordion-body acctext">
+              <strong>منصة فرينلانسر مننا وعلينا</strong> هي منصة عربية - مصرية بتساعد كل اصحاب الحرف انهم يزودوا مصدر دخلهم باي حرفة بيعملوها حتي لو جوة بيوتهم.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              كيف يمكنني الاستفادة من المنصة
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body acctext">
+              <strong>في منصة "فريلانسر مننا و علينا"</strong> تستطيع نشر مشروعك كاصلاح مشاكل سباكة ، تصميم طارات مناسبات وغيرها الكثير من التخصصات التي تحتاجها ، فتبدأ في تلقي عروض من الحرفيين المحترفين المهتمين بالعمل على مشروعك لتقارن بين العروض وتختار أفضلها، ثم تقوم بتوظيف الحرفي صاحب أفضل عرض وتتولى المتابعة معه حتى إتمام تنفيذ مشروعك، كما يمكنك البحث بنفسك عن أفضل الحرفيين وتعرض عليهم مشروعك بشكل مباشر للعمل عليه ، توفر لك بيئة العمل للتعامل بشكل آمن وسريع مع كافة الحرفيين.
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              كيف تضمن المنصة حقوقي ؟
+            </button>
+          </h2>
+          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body acctext">
+              <strong>منصة فرينلاسرز مننا و علينا</strong> تضمن لك حقك المالي بشكل كامل فلا داع ﻷي قلق، كن مطمئنا عند إنشاء أي مشاريع جديدة أو شراء خدمات كذلك تقديم عروض على المشاريع المعروضة في الموقع أو بيع خدمات ، حيث تقوم منصة نفذلي بدور الوسيط بين صاحب المشروع أو مشتري الخدمة وبين المستقل أو بائع الخدمة وتحمي حقوق الطرفين المالية في حال الالتزام بشروط المنصة وبنود الضمان وتوضيح الاتفاق تماماً ..
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+              ماذا سيحدث بعد نشر مشروعي ؟
+            </button>
+          </h2>
+          <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body acctext">
+              <strong>منصة فرينلاسرز مننا و علينا</strong> تضمن لك حقك المالي بشكل كامل فلا داع ﻷي قلق، كن مطمئنا عند إنشاء أي مشاريع جديدة أو شراء خدمات كذلك تقديم عروض على المشاريع المعروضة في الموقع أو بيع خدمات ، حيث تقوم منصة نفذلي بدور الوسيط بين صاحب المشروع أو مشتري الخدمة وبين المستقل أو بائع الخدمة وتحمي حقوق الطرفين المالية في حال الالتزام بشروط المنصة وبنود الضمان وتوضيح الاتفاق تماماً ..
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed accbutton" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+              لماذ التوظيف عبر فريلانسرز مننا وعلينا هو الافضل بالنسبة لي ؟
+            </button>
+          </h2>
+          <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+            <div class="accordion-body acctext">
+              في السنوات الأخيرة انتشر على الصعيد العالمي نظام التوظيف عن بُعد، حيث تلجأ العديد من الشركات والمؤسسات – وكذلك الأفراد – إلى الاستعانة بأفراد يعملون عن بُعد من المنزل أو أي مكان في العالم عبر الإنترنت.
+              التوظيف عن بعد لا يعترف بوجود الحدود الجغرافية؛ فبإمكانك توظيف حرفيين موهوبين ومبدعين من كل أنحاء العالم، فيعمل كل واحد منهم من المكان المُفضل بالنسبة له بأريحية تامة، وفي الأوقات التي يحددها لنفسه؛ وبذلك ستتوفر للحرفي كافة العوامل الدافعة للإنتاج، بالإضافة إلى الراحة الجسدية والنفسية. </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section5">
+    <div class="r-container5">
+      <p>
+        جاهز لاستغلال اول فرصة؟
+      </p>
+      <button type="submit" class="section5btn">سجل الان</button>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer text-center text-lg-start text-dark" style="background-color: #ECEFF1">
+    <!-- Section: Social media -->
+    <section class="d-flex justify-content-between p-4 text-white" style="background-color: #196fb5">
+      <!-- Left -->
+      <div class="me-5">
+        <p class="footerheadline">تابعنا علي منصات التواصل الاجتماعي:</p>
+      </div>
+      <!-- Left -->
+
+      <!-- Right -->
+      <div>
+        <a href="" class="text-white me-4">
+          <img src="stocks/icons/011-facebook-1.svg" class="socialmedia">
+          <!-- <i class="fab fa-facebook-f"></i> -->
+        </a>
+        <a href="" class="text-white me-4">
+          <img src="stocks/icons/009-twitter-1.svg" class="socialmedia">
+          <!-- <i class="fab fa-twitter"></i> -->
+        </a>
+        <a href="" class="text-white me-4">
+          <!-- <i class="fab fa-google"></i> -->
+        </a>
+        <a href="" class="text-white me-4">
+          <img src="stocks/icons/010-instagram.svg" class="socialmedia">
+          <!-- <i class="fab fa-instagram"></i> -->
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="" class="text-white me-4">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <!-- Right -->
+    </section>
+    <!-- Section: Social media -->
+
+    <!-- Section: Links  -->
+    <section class="">
+      <div class="container text-center text-md-end mt-5">
+        <!-- Grid row -->
+        <div class="row mt-3">
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+            <!-- Content -->
+            <h6 class="text-uppercase fw-bold">
+              <img src="stocks/logo.png" style="width: 100px;" alt="">
+            </h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p>
+              اول منصة عربية للحرفيين
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold txtfooter">الخدمات</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p>
+              <a href="#!" class="text-dark txtfooter">سباكة</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark txtfooter">نقاشة</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark txtfooter">اعمال يدوية</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark txtfooter">مطبخ</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold">المزيد</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p>
+              <a href="#!" class="text-dark txtfooter">حسابك الشخصي</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark txtfooter">انضم الينا</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark txtfooter">اراء العملاء</a>
+            </p>
+            <p>
+              <a href="#!" class="text-dark txtfooter">المساعدة</a>
+            </p>
+          </div>
+          <!-- Grid column -->
+
+          <!-- Grid column -->
+          <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+            <!-- Links -->
+            <h6 class="text-uppercase fw-bold txtfooter">للتواصل</h6>
+            <hr class="mb-4 mt-0 d-inline-block mx-auto" style="width: 60px; background-color: #7c4dff; height: 2px" />
+            <p><i class="fas fa-home mr-3"></i>اسوان، مصر</p>
+            <p><i class="fas fa-envelope mr-3"></i> info@example.com</p>
+            <p><i class="fas fa-phone mr-3"></i> +20 0111291277</p>
+            <p><i class="fas fa-print mr-3"></i> +20 01025202434</p>
+          </div>
+          <!-- Grid column -->
+        </div>
+        <!-- Grid row -->
+      </div>
+    </section>
+    <!-- Section: Links  -->
+
+    <!-- Copyright -->
+    <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2)">
+      © 2020 Copyright:
+      <a class="text-dark" href="https://iti.gov.eg/">Iti Aswan.com</a>
+    </div>
+    <!-- Copyright -->
+  </footer>
+  <!-- Footer -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+  <script src="user.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dashboard</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="./all.min.css">
+        <link rel="stylesheet" href="./style.css">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+</head>
+<body>
+    <!-- start sidebar -->
+    <div class="a-sidebar">
+        <div class="logo"></div>
+        <ul class="menu">
+            
+            <li>
+                <a href="./dashboard.html">
+                    <i class="fa-solid fa-house-chimney" style="color: #f5f5f5;"></i>
+                <span>الرئيسية</span>
+            </a>
+            </li>
+            <li class="single-menu">
+                <a href="./services.php">
+                <i class="fa-solid fa-server" style="color: #f5f5f5;"></i>
+                <span>الخدمات</span>
+                 </a>
+            </li>
+
+            <li class="single-menu">
+                <a href="./users.php">
+                <i class="fa-solid fa-user" style="color: #f5f5f5;"></i>
+                <span>المستخدمين</span>
+            </a>
+            </li>
+
+            <li class="single-menu">
+                <a href="./jobs.php">
+                <span><i class="fa-solid fa-briefcase" style="color: #f5f5f5;"></i></span>
+                <span>الاعمال</span>
+            </a>
+            </li>
+
+            <li class="single-menu">
+                <a href="./post.php">
+                <span><i class="fa-regular fa-address-card" style="color: #f5f5f5;" ></i></span>
+                <span>المنشورات</span>
+            </a>
+            </li>
+
+            <li class="single-menu">
+                <a href="./comment.php">
+                <span><i class="fa-solid fa-comments" style="color: #f5f5f5;" ></i></span>
+                <span>التعليقات</span>
+            </a>
+            </li>
+
+        </ul>
+    </div>
+    <!-- end sidebar -->
+    <!-- start main-content -->
+    <div class="a-main-content">
+        <div class="a-header-wrapper">
+            <div class="a-header-title">
+                <h2>الرئيسية</h2>
+            </div>
+            <!-- <div class="a-user-info">
+                <form class="a-search-box" action="">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" placeholder="Search">
+                </form>
+    </div> -->
+    </div>
+   <div class="parent">
+
+    <div class="w3-container">
+ 
+
+        <div class="w3-card-4">
+          <header class="w3-container w3-light-grey">
+            <h3>عدد الحرفيين</h3>
+          </header>
+          <div class="w3-container">
+            <p>18,000</p>
+            <hr>
+      
+            <p><b>الاعداد في زيادة شهرية بنسبة 2% ومن المحتمل ان تزاد الضعف مع نهاية العام الجاري</b></p><br>
+         
+      </div>
+  </div>
+</div>
+
+<div class="w3-container">
+ 
+
+    <div class="w3-card-4">
+      <header class="w3-container w3-light-grey">
+        <h3>عدد العملاء</h3>
+      </header>
+      <div class="w3-container">
+        <span>25,889</span>
+        <hr>
+  
+        <p><b>اعداد مشتريين الخدمات في زيادة بمعل سبعين خدمة في اليوم الواحد و ما يقرب من 2000 خدمة    </b></p><br>
+     
+  </div>
+</div>
+</div>
+
+
+<div class="w3-container">
+ 
+
+    <div class="w3-card-4">
+      <header class="w3-container w3-light-grey">
+        <h3>عدد زيارات الموقع</h3>
+      </header>
+      <div class="w3-container">
+        <p>50,577</p>
+        <hr>
+  
+        <p><b>يتم زيارة الصفحة الرئيسية بنسبة 500 مرة يوميا وتزداد النسبة ايام الاحد و الثلاثاء من  كل اسبوع</b></p><br>
+     
+  </div>
+</div>
+</div>
+
+<div class="w3-container">
+ 
+
+    <div class="w3-card-4">
+      <header class="w3-container w3-light-grey">
+        <h3>الارباح السنوية</h3>
+      </header>
+      <div class="w3-container">
+        <p>6,700,245</p>
+        <hr>
+  
+        <p><b>وصلت الارباح السنوية لأعلي مستوي لها في نهاية مارس الماضي بنسبة تصل الي 150%</b>
+        </p><br>
+     
+  </div>
+</div>
+</div>
+
+</div>
+<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+    <!-- end main-content -->
+
+</body>
+<script>
+    
+var xyValues = [
+  {x:50, y:7},
+  {x:60, y:8},
+  {x:70, y:8},
+  {x:80, y:9},
+  {x:90, y:9},
+  {x:100, y:9},
+  {x:110, y:10},
+  {x:120, y:11},
+  {x:130, y:14},
+  {x:140, y:14},
+  {x:150, y:15}
+];
+
+new Chart("myChart", {
+  type: "scatter",
+  data: {
+    datasets: [{
+      pointRadius: 4,
+      pointBackgroundColor: "rgb(0,0,255)",
+      data: xyValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      xAxes: [{ticks: {min: 40, max:160}}],
+      yAxes: [{ticks: {min: 6, max:16}}],
+    }
+  }
+});
+</script>
+</html>

@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Cairo', sans-serif;
+}
+@media (min-width: 1500px){
+    #cont {
+        max-width: 1700px;
+    }}
+    @media (max-width: 700px){
+        #col {
+            display: none;
+        }}
+        @media (max-width: 770px){
+            #cardRow{
+                flex-direction: column;
+            }
+            }
+
+        @media (max-width: 992px){
+            #row::before{
+
+                content: "";
+                position: absolute;
+                left: 100px;
+                bottom: 0;
+                height: 34px;
+                width: 77%;
+                border-bottom: 3px solid #1363A3;
+             
+            }}
+            @media (max-width: 650px){
+                #row::before{
+    
+                    content: "";
+                    position: absolute;
+                    left: 100px;
+                    bottom: 0;
+                    height: 34px;
+                    width: 0;
+                    border-bottom: 3px solid #1363A3;
+                 
+                }}
+                @media (max-width: 992px){
+                    #row::after{
+        
+                        content: "";
+                        position: absolute;
+                        left: 100px;
+                        bottom: 0;
+                        height: 34px;
+                        width: 77%;
+                        border-bottom: 3px solid #1363A3;
+                     
+                    }}
+                @media (max-width: 650px){
+                    #row::after{
+        
+                        content: "";
+                        position: absolute;
+                        left: 100px;
+                        bottom: 0;
+                        height: 34px;
+                        width: 0;
+                        border-bottom: 3px solid #1363A3;
+                     
+                    }}
+    
+
+
+body{
+    background:#dee1e4;
+
+}
+h1{
+    font-family: 'Cairo', sans-serif;
+    color: #1363A3;
+    font-size: 32px;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+ h2{
+    color: #777;
+    font-family: 'Cairo', sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    letter-spacing: 1;
+    margin-left: 2px;
+    margin-top: 10px;
+}
+
+ input,p{
+    border: 0;
+    border-bottom: 1px solid #1363A3;
+    width: 100%;
+    font-family: 'Cairo', sans-serif;
+    font-size: 18px;
+    padding: 7px 0;
+    color: #070707;
+    outline: none;
+    background:transparent;
+    display: block;
+}
+.mainImg{
+    width: 30%;
+    border-radius: 10% 50% 10% 50%;
+}
+
+.container{
+    
+    background: #F8F9FA;
+    box-shadow: 2px 5px 20px rgb(119,119,119,.5);
+    border-radius: 5px;
+    
+
+
+}
+/**user info  **/
+.row{
+    margin-bottom: 50px;
+    position: relative;
+
+}
+.row::before{
+
+    content: "";
+    position: absolute;
+    left: 100px;
+    bottom: 0;
+    height: 34px;
+    width: 87%;
+    border-bottom: 3px solid #1363A3;
+ 
+}
+.userInfo{
+    width: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+
+}
+#fixed .btn{
+    font-family: 'Cairo', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    border: 0;
+    color: #fff;
+    background:#1363A3;
+    padding: 7px 15px;
+    box-shadow: 0px 2px 4px 0px rgb(0,0,0,.2);
+    cursor: pointer;
+    margin-top: 15px;
+    width:auto;
+}
+#fixed .btn:hover{
+    color: #0c0c0c;
+    background:transparent;
+}
+/*? user settings  ?*/
+/* #dynamic{
+    display: none;
+} */
+
+/*! user section  */
+.col-2{
+    display: flex;
+    align-items: center;
+}
+.user{
+   width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-right: 3px solid #1363A3;
+    height: 30vh;
+}
+.userName{
+    border: 0;
+    border-bottom: 1px solid #1363A3;
+    width: 90%;
+    font-family: 'Cairo', sans-serif;
+    font-size: 18px;
+    padding: 7px 0;
+    color: #070707;
+    outline: none;
+    background:transparent;
+    display: block;
+    text-align: center;
+}
+.userTitle{
+    border: 0;
+    width: 90%;
+    font-family: 'Cairo', sans-serif;
+    font-size: 15px;
+    padding: 7px 0;
+    color: #777;
+    text-align: center;
+    outline: none;
+    background:transparent;
+    display: block;
+}
+.userImg{
+    width: 100%;
+    border-radius:50%;
+}
+/** post section  **/
+li{
+    list-style: none;
+}
+.form{
+    border-bottom: 1px solid #1363A3;
+    border-top: 1px solid #1363A3;
+}
+form .btn{
+    font-family: 'Cairo', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    border: 0;
+    color: #fff;
+    background:#1363A3;
+    padding: 7px 15px;
+    box-shadow: 0px 2px 4px 0px rgb(0,0,0,.2);
+    cursor: pointer;
+    margin-top: 15px;
+}
+/** timeline section  **/
+.lastRow{
+    margin-top: 90px;
+}
+.lastRow::before{
+    content: "";
+    width: 0;
+}
+.lastRow::after{
+    content: "";
+    position: absolute;
+    left: 100px;
+    top: 0;
+    height: 34px;
+    width: 87%;
+    border-bottom: 3px solid #1363A3;
+}
+.special{
+    position: relative;
+    top: -81px;
+    right: 28px;
+    background-color: #F8F9FA;
+    z-index: 5;
+    width: 9%;
+}
+.lastRow .btn{
+    font-family: 'Cairo', sans-serif;
+    text-transform: uppercase;
+    font-size: 20px;
+    border: 0;
+    color: #fff;
+    background:#1363A3;
+    padding: 7px 15px;
+    box-shadow: 0px 2px 4px 0px rgb(0,0,0,.2);
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+
+.card{
+    margin: 20px;
+}
+#cardRow::before{
+content: "";
+width: 0;
+}
